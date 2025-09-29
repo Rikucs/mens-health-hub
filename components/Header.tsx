@@ -23,10 +23,22 @@ const MagazineWrapper: React.FC<MagazineWrapperProps> = ({ children, currentPage
       const touchEndX = e.changedTouches[0].clientX;
       const touchEndY = e.changedTouches[0].clientY;
       const deltaX = touchStartX.current - touchEndX;
-      const deltaY = Math.abs(touchStartY.current - touchEndY);
+      const deltaY = touchStartY.current - touchEndY;
+      
+      const horizontalDistance = Math.abs(deltaX);
+      const verticalDistance = Math.abs(deltaY);
 
-      // Only trigger swipe if horizontal movement is greater than vertical
-      if (Math.abs(deltaX) > 50 && deltaY < 100) {
+      // Only trigger swipe if:
+      // 1. Horizontal movement is significant (>80px)
+      // 2. Horizontal movement is much greater than vertical (2:1 ratio)
+      // 3. Not starting from a scrollable area (messages page)
+      const target = e.target as HTMLElement;
+      const isInScrollableArea = target.closest('[data-scrollable="true"]') || 
+                                target.closest('.overflow-y-auto') ||
+                                target.closest('[style*="overflow-y: auto"]');
+      
+      if (!isInScrollableArea && horizontalDistance > 80 && horizontalDistance > verticalDistance * 2) {
+        e.preventDefault(); // Only prevent default for actual swipe gestures
         if (deltaX > 0 && currentPage < totalPages) {
           onNext(); // Swipe left = next page
         } else if (deltaX < 0 && currentPage > 1) {
@@ -38,7 +50,7 @@ const MagazineWrapper: React.FC<MagazineWrapperProps> = ({ children, currentPage
     const container = containerRef.current;
     if (container) {
       container.addEventListener('touchstart', handleTouchStart, { passive: true });
-      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchend', handleTouchEnd, { passive: false }); // Need non-passive for preventDefault
 
       return () => {
         container.removeEventListener('touchstart', handleTouchStart);
