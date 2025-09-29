@@ -1,24 +1,23 @@
 import { Comment } from './types';
 
-// For Vite, images in the public directory are served from the root
-// In production, they'll be served from /mens-health-hub/
-export const COVER_IMAGE_URL = '/images/cover.png';
+// Base path for images - this will be handled by Vite's base configuration
+export const COVER_IMAGE_URL = './images/cover.png';
 
 // For split-view pages (two images per page)
 export const CONTENT_PAGES_IMAGES = [
   // Page 2
-  { img1: '/images/page2a.png', img2: '/images/page2b.png' },
+  { img1: './images/page2a.png', img2: './images/page2b.png' },
   // Page 3
-  { img1: '/images/page3a.png', img2: '/images/page3b.png' },
+  { img1: './images/page3a.png', img2: './images/page3b.png' },
   // Page 4
-  { img1: '/images/page4a.png', img2: '/images/page4b.png' },
+  { img1: './images/page4a.png', img2: './images/page4b.png' },
   // Page 5
-  { img1: '/images/page5a.png', img2: '/images/page5b.png' },
+  { img1: './images/page4a.png', img2: './images/page4b.png' }, // Using page4 images as placeholders
 ];
 
 // For single full-page images
 export const SINGLE_PAGE_IMAGES = [
-  '/images/page2a.png', // This is the image you currently have
+  './images/page2a.png', // This is the image you currently have
   // Add more single page images as needed
 ];
 
