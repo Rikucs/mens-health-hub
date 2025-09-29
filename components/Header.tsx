@@ -134,11 +134,6 @@ const MagazineWrapper: React.FC<MagazineWrapperProps> = ({ children, currentPage
               />
             ))}
           </div>
-          
-          {/* Page text */}
-          <span className="text-white font-bebas text-lg md:text-2xl tracking-wider">
-            Page {currentPage} of {totalPages}
-          </span>
         </div>
       </div>
     </div>
