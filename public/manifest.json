@@ -1,0 +1,25 @@
+{
+  "name": "Men's Health Hub - Farewell Magazine",
+  "short_name": "MH Hub",
+  "description": "A digital magazine-style farewell project created as a tribute to Diogo's journey at NewCoffee",
+  "theme_color": "#dc2626",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/images/cover.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/cover.png",
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
