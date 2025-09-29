@@ -1,26 +1,24 @@
 import { Comment } from './types';
 
-// Base URL handling for GitHub Pages
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/mens-health-hub' : '';
-
-// Using paths that work with GitHub Pages deployment
-export const COVER_IMAGE_URL = `${BASE_URL}/images/cover.png`;
+// For Vite, images in the public directory are served from the root
+// In production, they'll be served from /mens-health-hub/
+export const COVER_IMAGE_URL = '/images/cover.png';
 
 // For split-view pages (two images per page)
 export const CONTENT_PAGES_IMAGES = [
   // Page 2
-  { img1: `${BASE_URL}/images/page2a.png`, img2: `${BASE_URL}/images/page2b.png` },
+  { img1: '/images/page2a.png', img2: '/images/page2b.png' },
   // Page 3
-  { img1: `${BASE_URL}/images/page3a.png`, img2: `${BASE_URL}/images/page3b.png` },
+  { img1: '/images/page3a.png', img2: '/images/page3b.png' },
   // Page 4
-  { img1: `${BASE_URL}/images/page4a.png`, img2: `${BASE_URL}/images/page4b.png` },
+  { img1: '/images/page4a.png', img2: '/images/page4b.png' },
   // Page 5
-  { img1: `${BASE_URL}/images/page5a.png`, img2: `${BASE_URL}/images/page5b.png` },
+  { img1: '/images/page5a.png', img2: '/images/page5b.png' },
 ];
 
 // For single full-page images
 export const SINGLE_PAGE_IMAGES = [
-  `${BASE_URL}/images/page2a.png`, // This is the image you currently have
+  '/images/page2a.png', // This is the image you currently have
   // Add more single page images as needed
 ];
 
