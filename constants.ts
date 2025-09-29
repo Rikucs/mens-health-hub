@@ -44,5 +44,12 @@ Obrigada por tudo o que foste e és nesta caminhada. Que a vida te sorria muito 
 E lembra-te: a miúda mais lamechas da equipa vai estar sempre aqui para ti e para uma sessão de PT, claro. O voucher não tem data de validade 😎
 
 Com carinho,` 
+  },
+    { 
+    author: "Flávio", 
+    text: `Mais uma nova etapa e conquista, e pelo que te conheço mais do que merecida! A mudança faz parte do crescimento, e sei que estás totalmente preparado para tudo que aí vem. 
+É sempre bom ver uma máquina como tu a ser reconhecida e recompensada como deve ser, com as melhores condições possíveis! 
+Desejo te o maior sucesso nesta nova fase, que continues a crescer profissionalmente e fisicamente também, ainda mais! 💪😂
+Um grande abraço e tudo de bom nesta nova aventura!` 
   }
 ];
