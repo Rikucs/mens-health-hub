@@ -36,7 +36,6 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
       {/* Scrollable comments area */}
       <div 
         className="flex-1 min-h-0 overflow-y-auto px-4 md:px-8 pb-20 pt-4"
-        data-scrollable="true"
         style={{ 
           touchAction: 'pan-y',
           WebkitOverflowScrolling: 'touch',

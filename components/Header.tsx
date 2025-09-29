@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 interface MagazineWrapperProps {
   children: React.ReactNode;
@@ -9,68 +9,13 @@ interface MagazineWrapperProps {
 }
 
 const MagazineWrapper: React.FC<MagazineWrapperProps> = ({ children, currentPage, totalPages, onNext, onPrev }) => {
-  const touchStartX = useRef<number>(0);
-  const touchStartY = useRef<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX.current = e.touches[0].clientX;
-      touchStartY.current = e.touches[0].clientY;
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const touchEndX = e.changedTouches[0].clientX;
-      const touchEndY = e.changedTouches[0].clientY;
-      const deltaX = touchStartX.current - touchEndX;
-      const deltaY = touchStartY.current - touchEndY;
-      
-      const horizontalDistance = Math.abs(deltaX);
-      const verticalDistance = Math.abs(deltaY);
-
-      // Only trigger swipe if:
-      // 1. Horizontal movement is significant (>80px)
-      // 2. Horizontal movement is much greater than vertical (2:1 ratio)
-      // 3. Not starting from a scrollable area (messages page)
-      const target = e.target as HTMLElement;
-      const isInScrollableArea = target.closest('[data-scrollable="true"]') || 
-                                target.closest('.overflow-y-auto') ||
-                                target.closest('[style*="overflow-y: auto"]');
-      
-      if (!isInScrollableArea && horizontalDistance > 80 && horizontalDistance > verticalDistance * 2) {
-        e.preventDefault(); // Only prevent default for actual swipe gestures
-        if (deltaX > 0 && currentPage < totalPages) {
-          onNext(); // Swipe left = next page
-        } else if (deltaX < 0 && currentPage > 1) {
-          onPrev(); // Swipe right = previous page
-        }
-      }
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('touchstart', handleTouchStart, { passive: true });
-      container.addEventListener('touchend', handleTouchEnd, { passive: false }); // Need non-passive for preventDefault
-
-      return () => {
-        container.removeEventListener('touchstart', handleTouchStart);
-        container.removeEventListener('touchend', handleTouchEnd);
-      };
-    }
-  }, [currentPage, totalPages, onNext, onPrev]);
 
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen bg-black md:bg-gray-800 flex flex-col justify-center items-center overflow-hidden touch-pan-y"
+      className="relative min-h-screen bg-black md:bg-gray-800 flex flex-col justify-center items-center overflow-hidden"
     >
-      {/* Mobile swipe instruction */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 md:hidden">
-        <div className="bg-black/70 text-white text-xs px-3 py-1 rounded-full animate-pulse">
-          👈 Swipe to navigate 👉
-        </div>
-      </div>
-
       <div className="w-full h-full md:h-auto md:w-auto flex flex-row items-center md:gap-8 justify-center md:p-4">
         {/* Desktop Previous Page Button */}
         <button
