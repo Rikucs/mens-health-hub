@@ -2,6 +2,8 @@
 
 A digital magazine-style farewell project created as a tribute to Diogo's journey at NewCoffee. Built with React, TypeScript, and Tailwind CSS to create an interactive magazine experience.
 
+🌐 **Live Site**: https://rikucs.github.io/mens-health-hub/
+
 ## 🌟 Features
 
 - **Interactive Magazine Layout**: Navigate through pages like a real magazine
