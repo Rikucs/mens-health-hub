@@ -49,7 +49,7 @@ const CoverPage: React.FC<CoverPageProps> = ({ imageUrl }) => {
             <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
           </svg>
           <h2 className="text-xl font-bebas mb-2">Men's Health Hub</h2>
-          <p className="text-sm text-red-400 mb-4">Farewell Magazine for Diogo</p>
+          <p className="text-sm text-red-400 mb-4">Uma lembrança de despedida</p>
           <p className="text-xs">Cover image is loading...</p>
         </div>
       )}
