@@ -1,14 +1,15 @@
 // Simple service worker for PWA functionality
-const CACHE_NAME = 'mens-health-hub-v1';
+const CACHE_NAME = 'mens-health-hub-v2';
+const BASE_PATH = '/mens-health-hub';
 const urlsToCache = [
-  '/',
-  '/images/cover.png',
-  '/images/page2a.png',
-  '/images/page2b.png',
-  '/images/page3a.png',
-  '/images/page3b.png',
-  '/images/page4a.png',
-  '/images/page4b.png'
+  BASE_PATH + '/',
+  BASE_PATH + '/images/cover.png',
+  BASE_PATH + '/images/page2a.png',
+  BASE_PATH + '/images/page2b.png',
+  BASE_PATH + '/images/page3a.png',
+  BASE_PATH + '/images/page3b.png',
+  BASE_PATH + '/images/page4a.png',
+  BASE_PATH + '/images/page4b.png'
 ];
 
 self.addEventListener('install', (event) => {

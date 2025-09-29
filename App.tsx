@@ -16,7 +16,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // Register service worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('/mens-health-hub/sw.js')
         .then((registration) => {
           console.log('SW registered: ', registration);
         })
