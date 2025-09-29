@@ -80,24 +80,37 @@ const App: React.FC = () => {
   return (
     <>
       {showInstallPrompt && (
-        <div className="fixed top-4 left-4 right-4 bg-red-600 text-white p-4 rounded-lg shadow-lg z-50 flex items-center justify-between">
-          <div>
-            <h3 className="font-bold">Install Men's Health Hub</h3>
-            <p className="text-sm">Add to your home screen for easy access!</p>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={handleInstallClick}
-              className="bg-white text-red-600 px-3 py-1 rounded text-sm font-medium hover:bg-gray-100"
-            >
-              Install
-            </button>
-            <button
-              onClick={() => setShowInstallPrompt(false)}
-              className="text-white hover:text-gray-200"
-            >
-              ✕
-            </button>
+        <div className="fixed top-4 left-4 right-4 bg-gradient-to-r from-red-600 to-red-700 text-white p-4 rounded-xl shadow-2xl z-50 animate-slideInUp">
+          <div className="flex items-center gap-3">
+            {/* App icon */}
+            <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+              </svg>
+            </div>
+            
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold text-sm md:text-base">Install Men's Health Hub</h3>
+              <p className="text-xs md:text-sm text-white/90 mt-1">Add to your home screen for the best experience!</p>
+            </div>
+            
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <button
+                onClick={handleInstallClick}
+                className="bg-white text-red-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-100 transition-colors shadow-md"
+              >
+                Install
+              </button>
+              <button
+                onClick={() => setShowInstallPrompt(false)}
+                className="text-white/80 hover:text-white p-2 transition-colors"
+                aria-label="Close"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       )}
