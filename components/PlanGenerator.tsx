@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Comment } from '../types';
 
 interface CommentsPageProps {
@@ -6,23 +6,8 @@ interface CommentsPageProps {
 }
 
 const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
-  const [visibleComments, setVisibleComments] = useState(0);
-
-  useEffect(() => {
-    // Animate comments appearing one by one - faster on mobile
-    const timer = setInterval(() => {
-      setVisibleComments(prev => {
-        if (prev < comments.length) {
-          return prev + 1;
-        }
-        clearInterval(timer);
-        return prev;
-      });
-    }, 300); // Reduced from 500ms to 300ms for faster loading
-
-    return () => clearInterval(timer);
-  }, [comments.length]);
-
+  // Remove the animation state - show all comments immediately
+  
   return (
     <section className="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black relative">
       {/* Mobile-optimized header */}
@@ -45,7 +30,7 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
         }}
       >
         <div className="max-w-2xl mx-auto space-y-4 md:space-y-6">
-          {comments.slice(0, visibleComments).map((comment, index) => (
+          {comments.map((comment, index) => (
             <div 
               key={index} 
               className="bg-white rounded-lg md:rounded-xl shadow-md p-3 md:p-6 border-l-4 border-red-400 transform transition-all duration-500 hover:shadow-lg animate-slideInUp"
@@ -76,17 +61,6 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
               </div>
             </div>
           ))}
-          
-          {/* Loading indicator for remaining comments */}
-          {visibleComments < comments.length && (
-            <div className="flex justify-center py-4">
-              <div className="animate-pulse flex space-x-1">
-                <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
