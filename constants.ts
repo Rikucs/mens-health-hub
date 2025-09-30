@@ -68,5 +68,11 @@ Desejo-te as maiores Felicidades, tanto a nível profissional como pessoal.
 Que a jornada que se inicia seja repleta de oportunidades e vitórias!
 Eu sei como bom profissional que és, irás Triunfar! 
 Beijinhos.`
+  },
+  {
+    author: "Fátima",
+    text: `Diogo A tua presença iluminou o nosso ambiente de trabalho, trazendo alegria, obrigada pela tua amizade e pelos sorrisos que tu trouxeste ao meu dia a dia, enquanto estive na Newcoffee. 
+Espero que esta tua nova trajetória seja repleta de oportunidades e conquistas .  
+Muitas felicidades 😘😘`
   }
 ];
