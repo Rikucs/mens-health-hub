@@ -24,9 +24,9 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
   }, [comments.length]);
 
   return (
-    <section className="w-full h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black flex flex-col relative overflow-hidden">
+    <section className="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black relative">
       {/* Mobile-optimized header */}
-      <div className="flex-shrink-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 p-4 md:p-6">
+      <div className="absolute top-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200 p-4 md:p-6">
         <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 text-center">
           Dos teus colegas e amigos
         </h2>
@@ -35,8 +35,9 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
 
       {/* Scrollable comments area */}
       <div 
-        className="flex-1 min-h-0 overflow-y-auto px-4 md:px-8 pb-20 pt-4"
+        className="h-full overflow-y-auto overflow-x-hidden px-4 md:px-8 pb-20"
         style={{ 
+          paddingTop: '120px', // Space for fixed header
           touchAction: 'pan-y',
           WebkitOverflowScrolling: 'touch',
           userSelect: 'auto',
