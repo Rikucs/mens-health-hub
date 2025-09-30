@@ -114,18 +114,22 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
-      <MagazineWrapper
-        currentPage={currentPage}
-        totalPages={TOTAL_PAGES}
-        onNext={handleNextPage}
-        onPrev={handlePrevPage}
-      >
-        <div key={currentPage} className={`animate-fade-in w-full ${
-          currentPage === 6 ? '' : 'h-full'
-        }`}>
-           {pageContent}
-        </div>
-      </MagazineWrapper>
+      
+      {/* Comments page - completely outside the magazine wrapper */}
+      {currentPage === 6 ? (
+        <CommentsPage comments={COMMENTS} />
+      ) : (
+        <MagazineWrapper
+          currentPage={currentPage}
+          totalPages={TOTAL_PAGES}
+          onNext={handleNextPage}
+          onPrev={handlePrevPage}
+        >
+          <div key={currentPage} className="animate-fade-in w-full h-full">
+             {pageContent}
+          </div>
+        </MagazineWrapper>
+      )}
     </>
   );
 };

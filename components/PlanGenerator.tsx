@@ -6,14 +6,29 @@ interface CommentsPageProps {
 }
 
 const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
+  const handleBack = () => {
+    window.history.back();
+  };
+
   return (
     <div className="comments-page min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black">
-      {/* Header */}
+      {/* Header with back button */}
       <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 p-4">
-        <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 text-center">
-          Dos teus colegas e amigos
-        </h2>
-        <div className="w-16 h-1 bg-red-600 mx-auto mt-2 rounded"></div>
+        <div className="flex items-center gap-4 mb-2">
+          <button 
+            onClick={handleBack}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
+            aria-label="Back to magazine"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 flex-1 text-center">
+            Dos teus colegas e amigos
+          </h2>
+        </div>
+        <div className="w-16 h-1 bg-red-600 mx-auto rounded"></div>
       </div>
 
       {/* Content - just normal flow, no height restrictions */}
