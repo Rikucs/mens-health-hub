@@ -121,7 +121,7 @@ const App: React.FC = () => {
         onPrev={handlePrevPage}
       >
         <div key={currentPage} className={`animate-fade-in w-full ${
-          currentPage === 6 ? 'h-auto' : 'h-full'
+          currentPage === 6 ? '' : 'h-full'
         }`}>
            {pageContent}
         </div>

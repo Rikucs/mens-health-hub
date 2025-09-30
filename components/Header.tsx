@@ -14,8 +14,8 @@ const MagazineWrapper: React.FC<MagazineWrapperProps> = ({ children, currentPage
   return (
     <div 
       ref={containerRef}
-      className={`relative min-h-screen bg-black md:bg-gray-800 flex flex-col justify-center items-center ${
-        currentPage === 6 ? 'overflow-auto' : 'overflow-hidden'
+      className={`relative bg-black md:bg-gray-800 flex flex-col justify-center items-center ${
+        currentPage === 6 ? 'min-h-screen' : 'min-h-screen overflow-hidden'
       }`}
     >
       <div className="w-full h-full md:h-auto md:w-auto flex flex-row items-center md:gap-8 justify-center md:p-4">
