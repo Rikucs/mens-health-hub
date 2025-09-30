@@ -60,5 +60,13 @@ Quero que saibas que das duas vezes que trabalhei contigo foi um privilégio eno
 És genuinamente boa pessoa, és íntegro, reges te com bons princípios e altruísta. És super educado, sabes estar e um bom ouvinte/ conselheiro.
 Gosto muito de ti e terás sempre um lugar especial no meu coração. Desejo te um enorme sucesso não só a nível profissional (que não duvido nem um bocadinho que o vás conseguir), como a nível pessoal também. Só quero que sejas feliz em todos os campos e que tenhas sempre saúde (aquele desejo de quem está quase nos 40 🙈).
 Um abraço desta menina que sempre te estimará`
+  },
+  {
+    author: "Mónica",
+    text: `Diogo, 
+Desejo-te as maiores Felicidades, tanto a nível profissional como pessoal.
+Que a jornada que se inicia seja repleta de oportunidades e vitórias!
+Eu sei como bom profissional que és, irás Triunfar! 
+Beijinhos.`
   }
 ];
