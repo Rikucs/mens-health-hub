@@ -9,7 +9,7 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
   // Remove the animation state - show all comments immediately
   
   return (
-    <section className="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black relative">
+    <section className="w-full min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black relative">
       {/* Mobile-optimized header */}
       <div className="absolute top-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200 p-3 md:p-6">
         <h2 className="font-bebas text-xl md:text-4xl tracking-wider text-red-600 text-center">
@@ -20,13 +20,14 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
 
       {/* Scrollable comments area */}
       <div 
-        className="h-full overflow-y-auto overflow-x-hidden px-3 md:px-8 pb-24"
+        className="min-h-screen overflow-y-scroll overflow-x-hidden px-3 md:px-8 pb-32"
         style={{ 
-          paddingTop: '90px', // Reduced padding for mobile
+          paddingTop: '80px', // Space for header
+          height: '100vh', // Full viewport height
           touchAction: 'pan-y',
           WebkitOverflowScrolling: 'touch',
-          userSelect: 'auto',
-          WebkitUserSelect: 'auto'
+          userSelect: 'text',
+          WebkitUserSelect: 'text'
         }}
       >
         <div className="max-w-2xl mx-auto space-y-4 md:space-y-6">
