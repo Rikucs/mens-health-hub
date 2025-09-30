@@ -120,7 +120,9 @@ const App: React.FC = () => {
         onNext={handleNextPage}
         onPrev={handlePrevPage}
       >
-        <div key={currentPage} className="animate-fade-in w-full h-full">
+        <div key={currentPage} className={`animate-fade-in w-full ${
+          currentPage === 6 ? 'h-auto' : 'h-full'
+        }`}>
            {pageContent}
         </div>
       </MagazineWrapper>

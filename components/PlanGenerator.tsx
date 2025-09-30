@@ -7,7 +7,7 @@ interface CommentsPageProps {
 
 const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
   return (
-    <div className="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black">
+    <div className="comments-page w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black">
       {/* Fixed header */}
       <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 p-4 sticky top-0 z-10">
         <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 text-center">
@@ -17,7 +17,7 @@ const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
       </div>
 
       {/* Scrollable content */}
-      <div className="p-4 space-y-6 pb-20">
+      <div className="p-4 space-y-6 pb-20 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 120px)' }}>
         {comments.map((comment, index) => (
           <div 
             key={index} 
