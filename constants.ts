@@ -74,5 +74,27 @@ Beijinhos.`
     text: `Diogo A tua presença iluminou o nosso ambiente de trabalho, trazendo alegria, obrigada pela tua amizade e pelos sorrisos que tu trouxeste ao meu dia a dia, enquanto estive na Newcoffee. 
 Espero que esta tua nova trajetória seja repleta de oportunidades e conquistas .  
 Muitas felicidades 😘😘`
+  },
+  {
+    author: "Tiago Melo",
+    text: `SELECT bombadão
+ 
+FROM pessoal_fixe_newcoffee
+ 
+WHERE
+               paixão = 'gym' AND
+               dedicação = 'muita' AND
+               conhecimento = 'máximo' AND
+               sempre_pronto_ajudar = 1 AND
+               molho_preferido = 'mostarda prozis' AND
+               codigo = 'DROCHA'
+ 
+RESULTADO: Só podia ser o grande Diogo Rocha! Foi, sem margem de dúvidas, um prazer ter convivido contigo. A tua boa disposição, prontidão em ajudar, piadas partilhadas na hora do almoço / lanches são características / maneiras de estar que, aliadas à tua forma de ser, devem ser valorizadas por ti (e são valorizadas pelos outros) e espero que as mantenhas na tua vida.
+ 
+"Daqui a vinte anos, vais arrepender-te mais das coisas que não fizeste do que das que fizeste" – Mark Twain. Ou seja, segue com confiança, com vontade de continuar a crescer e a acreditar que tomaste a decisão certa (mesmo que sintas desconfiança por parte de outras pessoas). Como se costuma dizer, "roda no ar", mas cuidado com a forma como conduzes, para não gastar tanto pneu.
+ 
+Resta ainda dizer: boa sorte neste novo desafio. Desejo-te as maiores felicidades :)
+ 
+Abraço,`
   }
 ];
