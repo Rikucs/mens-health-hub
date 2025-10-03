@@ -12,7 +12,7 @@ export const CONTENT_PAGES_IMAGES = [
   // Page 4
   { img1: './images/page4a.png', img2: './images/page4b.png' },
   // Page 5
-  { img1: './images/page5a.png', img2: './images/page4b.png' }, // Updated with page5a.png
+  { img1: './images/page5a.png', img2: './images/page5b.png' }, // Updated with both page5 images
 ];
 
 // For single full-page images
