@@ -96,5 +96,19 @@ RESULTADO: Só podia ser o grande Diogo Rocha! Foi, sem margem de dúvidas, um p
 Resta ainda dizer: boa sorte neste novo desafio. Desejo-te as maiores felicidades :)
  
 Abraço,`
+  },
+  {
+    author: "Helena Marques",
+    text: `Diogo,
+
+Mudanças são sinónimo de evolução, e espero que esta nova fase seja apenas o início de mais uma jornada cheia de conquistas e sucesso.
+
+Foi muito bom ter tido a oportunidade de conviver contigo e partilhar tantos momentos com a nossa grupeta maravilhosa — mesmo quando reclamavas comigo por não endireitar as costas e dizias que eu precisava de fazer pilates 😬😅. 
+
+Vou sentir falta dos teus conselhos sobre quais são as bolachas mais saudáveis e de me dizeres que os meus iogurtes estão cheios de açúcar 😅 — mas, acima de tudo, vou sentir falta da tua companhia e da boa disposição.
+
+Boa sorte para esta nova etapa e continua a espalhar essa energia boa por onde fores. Quem sabe, um dia, ainda nos voltamos a cruzar e abrimos o tal negócio! 😜🍰
+
+Um beijinho,`
   }
 ];
