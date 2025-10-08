@@ -71,9 +71,9 @@ const App: React.FC = () => {
       case 5:
         return <ImagePage images={CONTENT_PAGES_IMAGES[3]} />;
       case 6:
-        return <VideoPage videoUrl={VIDEO_URL} />;
+        return null; // Video page handled outside wrapper
       case 7:
-        return <CommentsPage comments={COMMENTS} />;
+        return null; // Comments page handled outside wrapper
       default:
         return null;
     }
@@ -118,8 +118,10 @@ const App: React.FC = () => {
         </div>
       )}
       
-      {/* Comments page - completely outside the magazine wrapper */}
-      {currentPage === 7 ? (
+      {/* Video and Comments pages - completely outside the magazine wrapper */}
+      {currentPage === 6 ? (
+        <VideoPage videoUrl={VIDEO_URL} />
+      ) : currentPage === 7 ? (
         <CommentsPage comments={COMMENTS} />
       ) : (
         <MagazineWrapper
