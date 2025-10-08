@@ -110,5 +110,19 @@ Vou sentir falta dos teus conselhos sobre quais são as bolachas mais saudáveis
 Boa sorte para esta nova etapa e continua a espalhar essa energia boa por onde fores. Quem sabe, um dia, ainda nos voltamos a cruzar e abrimos o tal negócio! 😜🍰
 
 Um beijinho,`
+  },
+  {
+    author: "Michelle Coutinho",
+    text: `Olá Bonitão!
+
+Agradeço as tuas dicas sobre uma boa alimentação é impressionante a tua sabedoria!
+
+És um excelente profissional muito inteligente. Sempre muito disponível para ajudar e com boa energia😊
+
+Desejo que tenhas todo o sucesso tanto na vida profissional como pessoal.
+
+Que a vida te sorria sempre! 😊 
+
+Beijinho Grande! 😗`
   }
 ];
