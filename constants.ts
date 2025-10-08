@@ -3,6 +3,9 @@ import { Comment } from './types';
 // Base path for images - this will be handled by Vite's base configuration
 export const COVER_IMAGE_URL = './images/cover.png';
 
+// Video URL
+export const VIDEO_URL = './images/Video1.mp4';
+
 // For split-view pages (two images per page)
 export const CONTENT_PAGES_IMAGES = [
   // Page 2

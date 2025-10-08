@@ -3,10 +3,11 @@ import MagazineWrapper from './components/Header'; // Repurposed as MagazineWrap
 import CoverPage from './components/FeaturedArticle'; // Repurposed as CoverPage
 import ImagePage from './components/ArticleGrid'; // Repurposed as ImagePage
 import SingleImagePage from './components/SingleImagePage'; // For full-page images
+import VideoPage from './components/VideoPage'; // For video page
 import CommentsPage from './components/PlanGenerator'; // Repurposed as CommentsPage
-import { COMMENTS, COVER_IMAGE_URL, CONTENT_PAGES_IMAGES, SINGLE_PAGE_IMAGES } from './constants';
+import { COMMENTS, COVER_IMAGE_URL, VIDEO_URL, CONTENT_PAGES_IMAGES, SINGLE_PAGE_IMAGES } from './constants';
 
-const TOTAL_PAGES = 6; // 1 cover + 4 content pages + 1 comments page
+const TOTAL_PAGES = 7; // 1 cover + 4 content pages + 1 video page + 1 comments page
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -70,6 +71,8 @@ const App: React.FC = () => {
       case 5:
         return <ImagePage images={CONTENT_PAGES_IMAGES[3]} />;
       case 6:
+        return <VideoPage videoUrl={VIDEO_URL} />;
+      case 7:
         return <CommentsPage comments={COMMENTS} />;
       default:
         return null;
@@ -116,7 +119,7 @@ const App: React.FC = () => {
       )}
       
       {/* Comments page - completely outside the magazine wrapper */}
-      {currentPage === 6 ? (
+      {currentPage === 7 ? (
         <CommentsPage comments={COMMENTS} />
       ) : (
         <MagazineWrapper
