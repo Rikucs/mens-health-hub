@@ -2,30 +2,50 @@ import React from 'react';
 
 interface VideoPageProps {
   videoUrl: string;
+  currentPage: number;
+  totalPages: number;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
-const VideoPage: React.FC<VideoPageProps> = ({ videoUrl }) => {
-  const handleBack = () => {
-    window.history.back();
-  };
-
+const VideoPage: React.FC<VideoPageProps> = ({ videoUrl, currentPage, totalPages, onNext, onPrev }) => {
   return (
     <div className="video-page min-h-screen bg-black flex flex-col">
-      {/* Header with back button */}
+      {/* Header with navigation */}
       <div className="bg-black/80 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between">
           <button 
-            onClick={handleBack}
-            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
-            aria-label="Back to magazine"
+            onClick={onPrev}
+            disabled={currentPage <= 1}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous page"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-white flex-1 text-center">
+          
+          <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-white text-center flex-1 mx-4">
             Video
           </h2>
+          
+          <button 
+            onClick={onNext}
+            disabled={currentPage >= totalPages}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next page"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        
+        {/* Page indicator */}
+        <div className="flex justify-center mt-3">
+          <span className="text-white/70 text-sm">
+            Page {currentPage} of {totalPages}
+          </span>
         </div>
       </div>
 

@@ -3,30 +3,50 @@ import { Comment } from '../types';
 
 interface CommentsPageProps {
   comments: Comment[];
+  currentPage: number;
+  totalPages: number;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
-const CommentsPage: React.FC<CommentsPageProps> = ({ comments }) => {
-  const handleBack = () => {
-    window.history.back();
-  };
-
+const CommentsPage: React.FC<CommentsPageProps> = ({ comments, currentPage, totalPages, onNext, onPrev }) => {
   return (
     <div className="comments-page min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 text-black">
-      {/* Header with back button */}
+      {/* Header with navigation */}
       <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 p-4">
-        <div className="flex items-center gap-4 mb-2">
+        <div className="flex items-center justify-between mb-2">
           <button 
-            onClick={handleBack}
-            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
-            aria-label="Back to magazine"
+            onClick={onPrev}
+            disabled={currentPage <= 1}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous page"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 flex-1 text-center">
+          
+          <h2 className="font-bebas text-2xl md:text-4xl tracking-wider text-red-600 text-center flex-1 mx-4">
             Dos teus colegas e amigos
           </h2>
+          
+          <button 
+            onClick={onNext}
+            disabled={currentPage >= totalPages}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next page"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        
+        {/* Page indicator */}
+        <div className="flex justify-center">
+          <span className="text-gray-600 text-sm">
+            Page {currentPage} of {totalPages}
+          </span>
         </div>
         <div className="w-16 h-1 bg-red-600 mx-auto rounded"></div>
       </div>

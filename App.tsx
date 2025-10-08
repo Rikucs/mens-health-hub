@@ -120,9 +120,21 @@ const App: React.FC = () => {
       
       {/* Video and Comments pages - completely outside the magazine wrapper */}
       {currentPage === 6 ? (
-        <VideoPage videoUrl={VIDEO_URL} />
+        <VideoPage 
+          videoUrl={VIDEO_URL} 
+          currentPage={currentPage}
+          totalPages={TOTAL_PAGES}
+          onNext={handleNextPage}
+          onPrev={handlePrevPage}
+        />
       ) : currentPage === 7 ? (
-        <CommentsPage comments={COMMENTS} />
+        <CommentsPage 
+          comments={COMMENTS}
+          currentPage={currentPage}
+          totalPages={TOTAL_PAGES}
+          onNext={handleNextPage}
+          onPrev={handlePrevPage}
+        />
       ) : (
         <MagazineWrapper
           currentPage={currentPage}
