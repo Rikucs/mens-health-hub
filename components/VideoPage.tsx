@@ -12,7 +12,6 @@ const VideoPage: React.FC<VideoPageProps> = ({ videoUrl }) => {
         className="w-full h-full object-contain max-w-full max-h-full"
         controls
         autoPlay
-        muted
         preload="metadata"
         playsInline
         controlsList="nodownload"
